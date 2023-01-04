@@ -5,9 +5,37 @@ function easyGame(arr) {
   return arr[index];
 }
 function hardGame(arr) {
-  let index = Math.floor(Math.random() * arr.length);
+  const win = [
+    [2, 0, 1],
+    [3, 0, 6],
+    [8, 4, 0],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+  ];
+  for (let i = 0; i < win.length; i++) {
+    const [a, b, c] = win[i];
+    let index = null;
+    if (arr.indexOf(4) >= 0) {
+      index = arr.indexOf(4);
+      return arr[index];
+    } else if (arr.indexOf(a) >= 0) {
+      index = arr.indexOf(a);
+      return arr[index];
+    } else if (arr.indexOf(b) >= 0) {
+      index = arr.indexOf(b);
+      return arr[index];
+    } else if (arr.indexOf(c) >= 0) {
+      index = arr.indexOf(c);
+      return arr[index];
+    } else {
+      index = Math.floor(Math.random() * arr.length);
+      return arr[index];
+    }
+  }
   // alert("hard");
-  return arr[index];
 }
 function checkWinner(arr) {
   const win = [
@@ -24,10 +52,11 @@ function checkWinner(arr) {
     const [a, b, c] = win[i];
     if (arr[a] === arr[b] && arr[b] === arr[c] && arr[a] != null) {
       return arr[a];
-    } 
-  }if (arr.indexOf(null) === -1) {
-      return "Draw";
     }
+  }
+  if (arr.indexOf(null) === -1) {
+    return "Draw";
+  }
 }
 function GameOver(props) {
   return (
