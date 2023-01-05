@@ -15,7 +15,8 @@ function Start(props) {
   const [loadPlayer, setLoadPlayer] = useState(false);
   const [loadChooseSide, setloadChooseSide] = useState(false);
   const [loadGameBoard, setloadGameBoard] = useState(false);
-
+  const [side, setSide] = useState(false);
+  const [levelClick, setLevelClick] = useState(false);
   if (loadChoose) {
     if (loadChooseSide) {
       if (loadGameBoard) {
@@ -26,28 +27,36 @@ function Start(props) {
           <Level
             easy={() => {
               level = "easy";
+              setLevelClick(true);
             }}
             hard={() => {
               level = "hard";
+              setLevelClick(true);
             }}
           />
           <ChooseSide
             userChooseX={() => {
               userChoose = "X";
               computerChoose = "0";
+              setSide(true);
               // setLoadLevel(true);
             }}
             userChooseO={() => {
               userChoose = "0";
               computerChoose = "X";
+              setSide(true);
               // setLoadLevel(true);
             }}
           />
           <button
             className="bg-orange-200 text-5xl  text-orange-500 m-2 mt-10 pt-1 pb-1 pr-12 pl-12 rounded-xl hover:bg-white"
-            onClick={() => {
-              setloadGameBoard(true);
-            }}
+            onClick={
+              side && levelClick
+                ? () => {
+                    setloadGameBoard(true);
+                  }
+                : {}
+            }
           >
             Play
           </button>
