@@ -5,7 +5,7 @@ import checkWinner, { easyGame, hardGame, GameOver } from "./Game.jsx";
 function Square(props) {
   return (
     <div
-      className="h-[6.3rem] w-[6.3rem] text-8xl text-center bg-orange-200 rounded-3xl font-mono"
+      className="h-[6.3rem] w-[6.3rem] text-8xl text-center bg-orange-200 rounded-3xl font-mono cursor-pointer md:text-10xl"
       onClick={props.onClick}
     >
       {props.value}
@@ -275,7 +275,7 @@ setGame("");
   return (
     <div className="text-center text-orange-500">
       <h2 className="text-3xl">{currentPlayer}'s Turn</h2>
-      <div className="grid grid-cols-3 grid-rows-3 h-[20rem] w-[90%] ml-4 mt-4   pt-1 pl-1 ">
+      <div className="grid grid-cols-3 grid-rows-3 h-[20rem] w-[90%] ml-4 mt-4 pt-1 pl-1 md:w-[30%] md:ml-[35%]">
         <Square
           value={arr[0]}
           onClick={gameOver ? () => {} : () => handleClick(0)}

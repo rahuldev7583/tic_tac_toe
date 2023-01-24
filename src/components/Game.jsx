@@ -60,12 +60,12 @@ function checkWinner(arr) {
 }
 function GameOver(props) {
   return (
-    <div className="text-2xl mt-2">
+    <div className="text-2xl mt-2 md:text-3xl">
       <h2 className="">Game Over</h2>
-      <h3 className="font-medium text-4xl">{props.winner}</h3>
+      <h3 className="font-medium text-4xl md:text-5xl">{props.winner}</h3>
 
       <button onClick={props.replay} className="">
-        <img src={Replay} alt="replayIcon" className="w-12 h-12" />
+        <img src={Replay} alt="replayIcon" className="w-12 h-12 md:w-16 h-16" />
       </button>
     </div>
   );

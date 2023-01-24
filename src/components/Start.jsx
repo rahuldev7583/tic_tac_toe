@@ -49,7 +49,7 @@ function Start(props) {
             }}
           />
           <button
-            className="bg-orange-200 text-5xl  text-orange-500 m-2 mt-10 pt-1 pb-1 pr-12 pl-12 rounded-xl hover:bg-white"
+            className="bg-orange-200 text-5xl  text-orange-500 m-2 mt-10 pt-1 pb-1 pr-12 pl-12 rounded-xl hover:bg-orange-300 md:text-6xl"
             onClick={
               side && levelClick
                 ? () => {
