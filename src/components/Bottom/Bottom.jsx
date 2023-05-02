@@ -7,7 +7,7 @@ function Bottom() {
     >
       created by
       <a
-        href="https://legendary-paprenjak-c7072d.netlify.app/"
+        href="https://iamrahul.dev"
         className="underline ml-2 text-lg md:text-2xl"
       >
         Rahul Dev
